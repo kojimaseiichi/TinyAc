@@ -24,6 +24,13 @@ dotnet add package Microsoft.EntityFrameworkCore.Design --version 8.0.4
 cd ..
 dotnet sln add "db/db.csproj"
 
+# 共通ロジックプロジェクト作成
+mkdir com
+cd com
+dotnet new classlib
+cd ..
+dotnet sln add "com/com.csporj"
+
 # 業務ロジック実装プロジェクト作成
 mkdir biz
 cd biz
@@ -32,7 +39,8 @@ cd ..
 dotnet sln add "biz/biz.csproj"
 
 
-dotnet add biz/biz.csproj reference db/db.csproj
+dotnet add com/com.csproj reference db/db.csproj
+dotnet add biz/biz.csproj reference com/com.csproj
 dotnet add tinyac/tinyac.csproj reference biz/biz.csproj
 ```
 
