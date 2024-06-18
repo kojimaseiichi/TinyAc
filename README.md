@@ -38,7 +38,7 @@ dotnet new classlib
 cd ..
 dotnet sln add "biz/biz.csproj"
 
-
+# プロジェクト間の依存関係
 dotnet add com/com.csproj reference db/db.csproj
 dotnet add biz/biz.csproj reference com/com.csproj
 dotnet add tinyac/tinyac.csproj reference biz/biz.csproj

@@ -1,0 +1,25 @@
+@page "/entry/sales/month"
+
+@using Microsoft.AspNetCore.Authorization
+@using tinyac.Components.Models
+
+@attribute [Authorize]
+
+<PageTitle>売上入力（月）</PageTitle>
+
+<h1>売上入力（月）</h1>
+
+<AuthorizeView>
+    <EditForm Model="@model" OnSubmit="@Submit">
+        <InputNumber></InputNumber>
+    </EditForm>
+</AuthorizeView>
+
+@code {
+    EntrySalesMonthModel model = new tinyac.Components.Models.EntrySalesMonthModel();
+
+    private void Submit()
+    {
+
+    }
+}
